@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mmig/cordova-plugin-gadgetbridge.git"
+    "url": "git+https://github.com/chmahdi/Miband_Plugin.git"
   },
   "keywords": [
     "cordova",
@@ -34,12 +34,12 @@
   "author": "russa",
   "license": "AGPL3",
   "bugs": {
-    "url": "https://github.com/mmig/cordova-plugin-gadgetbridge/issues"
+    "url": "https://github.com/chmahdi/Miband_Plugin/issues"
   },
   "scripts": {
     "doc": "typedoc --includeDeclarations --excludeExternals --exclude node_modules --excludePrivate --readme none --theme minimal --out docs www/gadgetbridge.d.ts"
   },
-  "homepage": "https://github.com/mmig/cordova-plugin-gadgetbridge#readme",
+  "homepage": "https://github.com/chmahdi/Miband_Plugin#readme",
   "devDependencies": {
     "typedoc": "^0.8.0"
   }
