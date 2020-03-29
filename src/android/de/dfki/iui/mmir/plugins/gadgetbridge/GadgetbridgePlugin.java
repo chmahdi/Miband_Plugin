@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import de.dfki.iui.mmir.plugins.gadgetbridge.db.DbTaskManager;
 import de.dfki.iui.mmir.plugins.gadgetbridge.utils.ApplySettings;
 import de.dfki.iui.mmir.plugins.gadgetbridge.utils.JSONUtils;
@@ -1116,7 +1117,7 @@ public class GadgetbridgePlugin extends CordovaPlugin implements IDeviceManager 
 					try{
 						response.put("Name" , device.getName());
 					}catch(JSONException e){
-						LOG.d("json catch", e);
+						Log.v("json catch", e);
 					}
 					
 				}
