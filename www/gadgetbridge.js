@@ -85,7 +85,7 @@ GadgetbridgePlugin.prototype.connect = function(timeout, successCallback, errorC
  * @param  {Function} [successCallback] the success callback: successCallback()
  * @param  {Function} [errorCallback] the error callback (e.g. Bluetooth is off)
  */
-GadgetbridgePlugin.prototype.connect = function(successCallback, errorCallback) {
+GadgetbridgePlugin.prototype.getDeviceList = function(successCallback, errorCallback) {
 	return exec(successCallback, errorCallback, "GadgetbridgePlugin", "getDevicesList", []);
 };
 

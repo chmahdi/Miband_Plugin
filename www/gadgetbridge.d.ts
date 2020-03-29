@@ -48,12 +48,12 @@ export interface GadgetbridgePlugin {
   connect: (timeout?: number | SuccessCallback, successCallback?: SuccessCallback | ErrorCallback, errorCallback?: ErrorCallback) => void;
   
   /**
-   * Connect to paired device.
+   *List paired device.
 
    * @param  {Function} [successCallback] the success callback: successCallback()
    * @param  {Function} [errorCallback] the error callback (e.g. Bluetooth is off)
    */
-  connect: (SuccessCallback, successCallback?: SuccessCallback | ErrorCallback, errorCallback?: ErrorCallback) => void;
+  getDeviceList: (SuccessCallback, successCallback?: SuccessCallback | ErrorCallback, errorCallback?: ErrorCallback) => void;
 
   /**
    * Add listener for connection-state changes.
