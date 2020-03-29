@@ -1,0 +1,46 @@
+{
+  "name": "cordova-plugin-gadgetbridge",
+  "version": "0.4.1",
+  "description": "Cordova plugin for Gadgetbridge.",
+  "cordova": {
+    "id": "cordova-plugin-gadgetbridge",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmig/cordova-plugin-gadgetbridge.git"
+  },
+  "keywords": [
+    "cordova",
+    "mmir",
+    "gadgetbridge",
+    "mi-band",
+    "pebble",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": { "cordova": ">100" }
+    }
+  },
+  "types": "www/gadgetbridge.d.ts",
+  "typescript": {
+    "definition": "www/gadgetbridge.d.ts"
+  },
+  "author": "russa",
+  "license": "AGPL3",
+  "bugs": {
+    "url": "https://github.com/mmig/cordova-plugin-gadgetbridge/issues"
+  },
+  "scripts": {
+    "doc": "typedoc --includeDeclarations --excludeExternals --exclude node_modules --excludePrivate --readme none --theme minimal --out docs www/gadgetbridge.d.ts"
+  },
+  "homepage": "https://github.com/mmig/cordova-plugin-gadgetbridge#readme",
+  "devDependencies": {
+    "typedoc": "^0.8.0"
+  }
+}
