@@ -67,6 +67,7 @@ public class GadgetbridgePlugin extends CordovaPlugin implements IDeviceManager 
 	public static final String ACTION_START_ALARM = "AlarmDetails";
 
 	public static final String ACTION_CONNECT = "connect";
+	public static final String ACTION_GET_DEVICES_LIST = "getDevicesList";
 	public static final String ACTION_IS_CONNECTED = "is_connected";
 	public static final String ACTION_DEVICE_INFO = "device_info";
 	public static final String ACTION_BATTERY_LEVEL = "battery_level";
@@ -412,6 +413,10 @@ public class GadgetbridgePlugin extends CordovaPlugin implements IDeviceManager 
 			}
 
 			this.connectDevice(callbackContext, timeout);
+
+		} else if (ACTION_GET_DEVICES_LIST.equals(action)) {
+			
+			this.getDevicesList(callbackContext, timeout);
 
 		} else if (ACTION_FIRE_NOTIFICATION.equals(action)) {
 
@@ -1097,6 +1102,19 @@ public class GadgetbridgePlugin extends CordovaPlugin implements IDeviceManager 
 
 		}
 		return this._device;
+	}
+
+	public GBDevice getDevicesList(CallbackContext callbackContext) {
+
+		if (this._deviceManager == null) {
+			this._deviceManager = ((GBApplication) GBApplication.getContext()).getDeviceManager();
+		}
+		List<GBDevice> deviceList = this._deviceManager.getDevices();
+			JSONObject response = new JSONObject();
+			for(GBDevice device : deviceList){
+				response.put("Name" , device.getName());
+			}
+		return callbackContext.success(response.toString());
 	}
 
   protected void startCheckPendingTimeout() {

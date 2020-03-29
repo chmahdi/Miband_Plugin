@@ -80,6 +80,16 @@ GadgetbridgePlugin.prototype.connect = function(timeout, successCallback, errorC
 };
 
 /**
+ * List  paired devices.
+ *
+ * @param  {Function} [successCallback] the success callback: successCallback()
+ * @param  {Function} [errorCallback] the error callback (e.g. Bluetooth is off)
+ */
+GadgetbridgePlugin.prototype.connect = function(successCallback, errorCallback) {
+	return exec(successCallback, errorCallback, "GadgetbridgePlugin", "getDevicesList", []);
+};
+
+/**
  * Add listener for connection-state changes.
  *
  * @param  {Function} [successCallback] the listener / event handler: successCallback({address: String, state: String})
