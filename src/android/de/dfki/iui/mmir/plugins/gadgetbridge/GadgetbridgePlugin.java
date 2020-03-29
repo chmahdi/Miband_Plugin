@@ -1113,7 +1113,12 @@ public class GadgetbridgePlugin extends CordovaPlugin implements IDeviceManager 
 		if (this._deviceManager.getSelectedDevice() == null) {
 			List<GBDevice> deviceList = this._deviceManager.getDevices();
 				for(GBDevice device : deviceList){
-					response.put("Name" , device.getName());
+					try{
+						response.put("Name" , device.getName());
+					}catch(JSONException e){
+						LOG.d("json catch", e);
+					}
+					
 				}
 		}
 		return response.toString();
