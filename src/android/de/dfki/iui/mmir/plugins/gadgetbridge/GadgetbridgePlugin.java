@@ -415,8 +415,8 @@ public class GadgetbridgePlugin extends CordovaPlugin implements IDeviceManager 
 			this.connectDevice(callbackContext, timeout);
 
 		} else if (ACTION_GET_DEVICES_LIST.equals(action)) {
-			
-			this.getDevicesList(callbackContext, timeout);
+
+			this.getDevicesList(callbackContext);
 
 		} else if (ACTION_FIRE_NOTIFICATION.equals(action)) {
 
