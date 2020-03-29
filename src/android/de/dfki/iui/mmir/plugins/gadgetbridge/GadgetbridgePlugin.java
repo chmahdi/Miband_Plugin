@@ -416,7 +416,7 @@ public class GadgetbridgePlugin extends CordovaPlugin implements IDeviceManager 
 
 		} else if (ACTION_GET_DEVICES_LIST.equals(action)) {
 			
-			this.getDevicesList(callbackContext);
+			callbackContext.success(this.getDevicesList());
 
 		} else if (ACTION_FIRE_NOTIFICATION.equals(action)) {
 
@@ -1104,7 +1104,7 @@ public class GadgetbridgePlugin extends CordovaPlugin implements IDeviceManager 
 		return this._device;
 	}
 
-	public String getDevicesList(CallbackContext callbackContext) {
+	public String getDevicesList() {
 
 		if (this._deviceManager == null) {
 			this._deviceManager = ((GBApplication) GBApplication.getContext()).getDeviceManager();
@@ -1116,7 +1116,7 @@ public class GadgetbridgePlugin extends CordovaPlugin implements IDeviceManager 
 					response.put("Name" , device.getName());
 				}
 		}
-		return callbackContext.success(response.toString());
+		return response.toString();
 	}
 
   protected void startCheckPendingTimeout() {
